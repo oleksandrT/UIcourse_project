@@ -4,7 +4,12 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    sourcemaps: {
+      enabled: false
+    },
+    sassOptions: {
+      inputFile: 'app.scss'
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -19,6 +24,18 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+
+  app.trees.styles = app.concatFiles(app.trees.app, {
+    // headerFiles: [
+    //   'styles/main.scss'
+    // ],
+    inputFiles: [
+      'styles/*.scss',
+      'styles/*/*.scss'
+    ],
+    outputFile: 'app.scss',
+    description: 'Concat: Sass'
+  });
 
   return app.toTree();
 };
