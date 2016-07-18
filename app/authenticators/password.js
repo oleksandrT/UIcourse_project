@@ -1,8 +1,9 @@
 import oAuth2 from 'ember-simple-auth/authenticators/oauth2-password-grant';
 import Ember from 'ember';
+import Env from 'uicourse-project/config/environment';
 
 export default oAuth2.extend({
-    serverTokenEndpoint: '/login',
+    serverTokenEndpoint: Env.APP.API_URL + '/login',
 
     makeRequest(url, data) {
         const options = {
