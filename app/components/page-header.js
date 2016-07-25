@@ -1,10 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    session: Ember.inject.service(),
     classNames: ['header'],
     tagName: 'header',
     showLogin: false,
     showSignup: false,
+    didInsertElement(){
+        this.get('session').on('authenticationSucceeded', this, 'hideModal');
+    },
+
+    hideModal(){
+        this.send('closeModal');
+    },
+
     actions: {
         closeModal() {
             this.set('showLogin', false);
@@ -19,6 +28,10 @@ export default Ember.Component.extend({
                 this.set('showSignup', true);
                 console.log('param: showSignup');
             }
+        },
+
+        logout() {
+            this.get('session').invalidate();
         }
     }
 

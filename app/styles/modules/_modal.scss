@@ -28,6 +28,12 @@
     h1 {
       text-align: center;
     }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      line-height: 5em;
+    }
   }
 
   @keyframes slideTop {

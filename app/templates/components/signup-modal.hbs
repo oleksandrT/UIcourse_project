@@ -1,17 +1,24 @@
 <div class="modal modal-large">
     <h1>Create account</h1>
-    <form action="" method="post" class="form-login">
+    <form {{action 'doSignup' on='submit'}} method="post" class="form-login">
         <label for="name">Name</label>
-        <input type="text" id="name">
+        <!--<input type="text" id="name">-->
+        {{input value=name id="name"}}
         <label for="email">Email</label>
-        <input type="text" id="email">
+        <!--<input type="text" id="email">-->
+        {{input value=email id="email"}}
         <label for="phone">Phone</label>
-        <input type="text" id="phone">
+        <!--<input type="text" id="phone">-->
+        {{input value=phone id="phone"}}
         <label for="login">Login</label>
-        <input type="text" id="login">
+        <!--<input type="text" id="login">-->
+        {{input value=login id="login"}}
         <label for="password">Password</label>
-        <input type="password" id="password">
-        <button {{action 'doSignup'}}>Sign up</button>
+        <!--<input type="password" id="password">-->
+        {{input value=password id="password"}}
+        <!--<button {{action 'doSignup'}}>Sign up</button>-->
+        <button type="submit">Sign up</button>
     </form>
+    <div class="success-message label-success">You successfully registered to Eventsbook</div>
     {{yield}}
 </div>

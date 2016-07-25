@@ -1,5 +1,3 @@
-/* jshint node: true */
-
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'uicourse-project',
@@ -13,10 +11,16 @@ module.exports = function(environment) {
       }
     },
 
+    'ember-simple-auth': {
+      routeAfterAuthentication:    'dashboard',
+      routeIfAlreadyAuthenticated: 'dashboard',
+      authenticationRoute: 'index'
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      API_URL: process.env.API_URL || 'http://localhost:3200'
+      API_URL: process.env.API_URL || 'http://localhost:3000'
     }
   };
 
