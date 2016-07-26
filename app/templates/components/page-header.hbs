@@ -1,0 +1,19 @@
+{{#link-to 'index' class="logo"}}Eventbook{{/link-to}}
+<div>
+    {{#if session.isAuthenticated}}
+        <a class="button" {{action 'logout'}}>Log out</a>
+    {{else}}
+        <a class="button" {{action 'showModal' 'login'}}>Log in</a>
+        <a class="button" {{action 'showModal' 'signup'}}>Sign up</a>
+    {{/if}}
+</div>
+
+
+{{#if showLogin}}
+    {{login-modal onclose=(action 'closeModal')}}
+{{/if}}
+
+{{#if showSignup}}
+    {{signup-modal onclose=(action 'closeModal')}}
+{{/if}}
+

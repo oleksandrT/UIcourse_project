@@ -1,0 +1,17 @@
+<div class="modal">
+    <h1>Log in to your account</h1>
+    <form {{action 'doLogin' on='submit'}} method="post" class="form-login">
+        <label for="login">Login</label>
+        {{input value=login type="text"}}
+        <label for="password">Password</label>
+        {{input value=password type="text"}}
+        <button type="submit">Log in</button>
+    </form>
+    {{#if errorMessage}}
+        <p>
+            <strong>Login failed:</strong>
+            <code>{{errorMessage}}</code>
+        </p>
+    {{/if}}
+    {{yield}}
+</div>
