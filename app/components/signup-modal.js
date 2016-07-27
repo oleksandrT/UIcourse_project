@@ -9,7 +9,6 @@ export default ModalDialog.extend({
     actions: {
         doSignup() {
           let _this = this;
-            //this.get('session').authenticate('authenticator:password', 'login', 'password');
             $.ajax({
               type: "POST",
               url: "http://localhost:3000/signup",
@@ -21,7 +20,6 @@ export default ModalDialog.extend({
                 password: this.get("password")
               }
             }).done(function () {
-              // _this.get("routing").transitionTo("dashboard"); // use this when login is successful
               console.log(_this);
               $('.form-login').hide();
               $('.success-message').show();
