@@ -9,7 +9,7 @@ export default ModalDialog.extend({
     actions: {
         doSignup() {
           let _this = this;
-            $.ajax({
+          Ember.$.ajax({
               type: "POST",
               url: "http://localhost:3000/signup",
               data: {
@@ -21,8 +21,8 @@ export default ModalDialog.extend({
               }
             }).done(function () {
               console.log(_this);
-              $('.form-login').hide();
-              $('.success-message').show();
+              Ember.$('.form-login').hide();
+              Ember.$('.success-message').show();
             });
         }
     }

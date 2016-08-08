@@ -1,0 +1,24 @@
+.banner {
+  padding: 11em 2em;
+  text-align: center;
+  background: $primary-color;
+  color: #fff;
+
+  p {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+  }
+}
+
+.banner-thin {
+  padding: 6rem 2rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .banner-thin {
+    padding: 6.5rem 2rem 1rem;
+  }
+}

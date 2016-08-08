@@ -6,7 +6,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
     actions: {
         createEvent() {
-            $.ajax({
+            Ember.$.ajax({
                 type: "POST",
                 url: "http://localhost:3000/events",
                 data: {
