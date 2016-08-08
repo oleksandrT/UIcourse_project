@@ -1,0 +1,27 @@
+.step {
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .step_text {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1024px) {
+  .step {
+    display: flex;
+    align-items: center;
+
+    .step_text, .step_image {
+      width: 50%;
+    }
+
+    .step_text.order1 { order: 1; }
+
+    .step_image.order2 { order: 2; }
+  }
+}

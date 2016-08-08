@@ -1,17 +1,29 @@
-<main class="main">
+<section class="banner banner-thin">
+    <h1>John Doe</h1>
+</section>
+<section class="events">
     <div class="wrapper">
-        <h1>Dashboard</h1>
-        <h3>Hello, Sam</h3>
-        <p>Your events</p>
-        <ul>
-            <li><a href="#">Managers seminar</a></li>
-            <li><a href="#">Git best practicies</a></li>
-            <li><a href="#">Npm for beginners</a></li>
-        </ul>
-
-        <br>
-        <div>
-            {{dashboard/users-list}}
+        <h2>Events</h2>
+        <button class="button-create">Create new</button>
+        <div class="events_group">
+            <h4>Upcoming</h4>
+            <ul class="events_list">
+                <li><a href="#">Gustavo and Gabriella seminar</a><button class="button-edit">Edit</button></li>
+                <li><a href="#">Workshops with Nito & Elba</a><button class="button-edit">Edit</button></li>
+                <li><a href="#">Service worker meetup</a><button class="button-edit">Edit</button></li>
+                <li><a href="#">JS day</a><button class="button-edit">Edit</button></li>
+                <li><a href="#">Coffee coding</a><button class="button-edit">Edit</button></li>
+            </ul>
+        </div>
+        <div class="events_group">
+            <h4>Past</h4>
+            <ul class="events_list">
+                <li><a href="#">Gustavo and Gabriella seminar</a><button class="button-edit">Edit</button></li>
+                <li><a href="#">Workshops with Nito & Elba</a><button class="button-edit">Edit</button></li>
+                <li><a href="#">Service worker meetup</a><button class="button-edit">Edit</button></li>
+                <li><a href="#">JS day</a><button class="button-edit">Edit</button></li>
+                <li><a href="#">Coffee coding</a><button class="button-edit">Edit</button></li>
+            </ul>
         </div>
     </div>
-</main>
+</section>

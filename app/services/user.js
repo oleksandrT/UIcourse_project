@@ -10,13 +10,14 @@ export default Ember.Service.extend({
         var ObjectPromiseProxy = Ember.ObjectProxy.extend(Ember.PromiseProxyMixin);
 
         var proxy = ObjectPromiseProxy.create({
-            promise: $.getJSON(Env.APP.API_URL + '/events/bill')
+            promise: Ember.$.getJSON(Env.APP.API_URL + '/events/bill')
         });
 
-        proxy.then(function(json){
+        proxy.then(function(){
             _this.set('data', proxy);
+          console.log();
         }, function(reason) {
-            console.log('no json, ', reason)
+            console.log('no json, ', reason);
         });
     }
 });

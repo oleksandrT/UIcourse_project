@@ -1,98 +1,14 @@
+@import "base/normalize";
+@import "base/fonts";
+@import "base/colors";
+@import "base/headings";
 
-/* Vendor */
-//@import "vendor/normalize.css";
+@import "layout/main";
+@import "layout/header";
+@import "layout/footer";
 
-/* Base */
-//@import "base";
-
-/* Layouts */
-//@import "layout/main";
-//@import "layout/header";
-//@import "layout/footer";
-
-/* Modules */
-//@import "modules/box";
-
-/* Theme */
-//@import "theme/_1.scss";
-//@import "theme/_palette3";
-
-.main {
-  padding: 60px 12px;
-}
-
-.main .wrapper {
-  max-width: 1024px;
-  margin: 0 auto;
-}
-
-.form-login label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-login input {
-  display: block;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 1rem;
-  border: 1px solid #61abec;
-}
-
-.form-login input[type="submit"], .form-login button {
-  color: #61abec;
-  background-color: transparent;
-  border: 2px solid #61abec;
-  font-size: 1em;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.form-login button:hover {
-  background-color: #61abec;
-  color: #fff;
-}
-
-.navigation {
-  display: none;
-  background-color: #3b3b3b;
-  padding: 20px 12px;
-}
-
-.navigation ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navigation ul li {
-  padding: 5px 10px;
-}
-
-.dashboard {
-  padding: 20px 12px;
-}
-
-
-@media (min-width: 768px) {
-  .form-login {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .content {
-    display: flex;
-  }
-
-  .content .navigation {
-    display: block;
-    flex: 1;
-  }
-
-  .content .dashboard {
-    padding: 20px 12px;
-    flex: 5;
-  }
-}
+@import "modules/dirty";
+@import "modules/modal";
+@import "modules/banner";
+@import "modules/step";
+@import "modules/events";

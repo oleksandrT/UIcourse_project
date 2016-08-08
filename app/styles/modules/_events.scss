@@ -1,0 +1,75 @@
+.events {
+  padding: 2.5rem 2rem;
+
+  .wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  h4 {
+    margin-bottom: 0.7em;
+  }
+
+  .button-create {
+    padding: 0 10px;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    background-color: $complementary-color;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 44px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+  }
+
+  .button-create:hover {
+    background-color: #bb5b4a;
+  }
+
+  .events_group {
+    margin-bottom: 2em;
+  }
+
+  .events_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 0.5em;
+    }
+
+    a {
+      display: block;
+      line-height: 1.3em;
+      padding: 0.4em 0;
+      max-width: 70%;
+      color: $primary-color;
+    }
+
+    .button-edit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $primary-color;
+      background-color: transparent;
+      border: 2px solid $primary-color;
+      padding: 0 10px;
+      line-height: 26px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button-edit:hover {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+}

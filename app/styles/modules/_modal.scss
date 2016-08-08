@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 
   .modal {
     width: 80%;
@@ -19,7 +20,7 @@
     padding: 30px;
     min-height: 200px;
     color: #333;
-    z-index: 10;
+    z-index: 99;
 
     &.modal-large {
       max-height: 90%;
@@ -75,5 +76,45 @@
 
   &.hide .modal {
     animation: slideTopBack 0.5s;
+  }
+}
+
+.form-login label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-login input {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border: 1px solid #61abec;
+}
+
+.form-login input[type="submit"], .form-login button {
+  color: #61abec;
+  background-color: transparent;
+  border: 2px solid #61abec;
+  font-size: 1em;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.form-login button:hover {
+  background-color: #61abec;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .modal {
+
+  }
+
+  .form-login {
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
