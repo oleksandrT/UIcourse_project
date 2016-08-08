@@ -1,5 +1,10 @@
-{{#link-to 'index' class="logo"}}Eventbook{{/link-to}}
-<div>
+<!--
+<div class="header_menu">
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+</div>
+-->
+<div class="header_buttons">
     {{#if session.isAuthenticated}}
         <a class="button" {{action 'logout'}}>Log out</a>
     {{else}}
@@ -7,7 +12,6 @@
         <a class="button" {{action 'showModal' 'signup'}}>Sign up</a>
     {{/if}}
 </div>
-
 
 {{#if showLogin}}
     {{login-modal onclose=(action 'closeModal')}}
