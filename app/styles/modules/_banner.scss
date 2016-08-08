@@ -11,6 +11,26 @@
     letter-spacing: 0.2em;
     line-height: 1.5;
   }
+
+  input[type="text"], input[type="date"] {
+    border-color: #fff;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #fff;
+  }
+  ::-moz-placeholder {
+    color: #fff;
+  }
+  :-moz-placeholder {
+    color: #fff;
+  }
+  :-ms-input-placeholder {
+    color: #fff;
+  }
 }
 
 .banner-thin {

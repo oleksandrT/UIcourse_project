@@ -61,29 +61,35 @@
     <section class="banner">
         <div class="wrapper">
             <input type="text" name="title" placeholder="Event title">
-            <input type="datetime" name="date" placeholder="Date">
+            {{bootstrap-datepicker value=expiresAt format="dd.mm.yy" placeholder="Date" class="form-control" autoclose=true }}
             <input type="text" name="location" placeholder="Location">
         </div>
     </section>
     <section class="details">
-        <div>
-            <div>About</div>
-            <textarea name="about"></textarea>
+        <div class="details_item">
+            <div class="details_title"><h4>About</h4></div>
+            <div class="details_content">
+                <textarea name="about"></textarea>
+            </div>
         </div>
-        <div>
-            <div>Schedule</div>
-            <fieldset>
-                <input type="time" name="class-time" placeholder="Class time">
-                <input type="text" name="class-title" placeholder="Class title">
-                <input type="text" name="class-description" placeholder="Class description">
-            </fieldset>
+        <div class="details_item">
+            <div class="details_title"><h4>Schedule</h4></div>
+            <div class="details_content">
+                <fieldset>
+                    <input type="time" name="class-time" placeholder="Class time">
+                    <input type="text" name="class-title" placeholder="Class title">
+                    <input type="text" name="class-description" placeholder="Class description">
+                </fieldset>
+            </div>
         </div>
-        <div>
-            <div>Teachers</div>
-            <fieldset>
-                <input type="text" name="teacher-name" placeholder="Teacher name">
-                <input type="text" name="teacher-information" placeholder="Teacher information">
-            </fieldset>
+        <div class="details_item">
+            <div class="details_title"><h4>Teachers</h4></div>
+            <div class="details_content">
+                <fieldset>
+                    <input type="text" name="teacher-name" placeholder="Teacher name">
+                    <input type="text" name="teacher-information" placeholder="Teacher information">
+                </fieldset>
+            </div>
         </div>
     </section>
 </form>

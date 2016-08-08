@@ -1,0 +1,44 @@
+/*
+ * DETAILS MODULE
+ */
+
+.details {
+  .details_content {
+    padding: 2.5rem 2rem;
+  }
+
+  .details_title {
+    text-align: center;
+    padding: 1rem;
+    background-color: $light-gray;
+  }
+
+  h4 {
+    margin-bottom: 0;
+  }
+
+  fieldset {
+    padding: 0;
+    border: none;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 14em;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .details {
+    display: flex;
+
+   .details_item {
+      flex: 1;
+    }
+
+    .details_title {
+
+    }
+  }
+}
