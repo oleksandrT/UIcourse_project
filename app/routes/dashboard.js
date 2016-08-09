@@ -15,6 +15,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
             }).done(function () {
                 console.log('Success');
             });
+        },
+
+        createevent() {
+            this.transitionTo('events.new', null);
         }
     }
 });
