@@ -12,11 +12,22 @@
     line-height: 1.5;
   }
 
-  input[type="text"], input[type="date"] {
+  input[type="text"] {
     border-color: #fff;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+  }
+
+  input[type="text"]:focus {
+    border-top: none;
+    border-left: none;
+    border-right: none;
   }
 
   ::-webkit-input-placeholder {

@@ -3,13 +3,17 @@
  */
 
 .details {
+  .details_row {
+    border-bottom: 1px solid #c0c0c0;
+  }
+
   .details_content {
     padding: 2.5rem 2rem;
   }
 
   .details_title {
     text-align: center;
-    padding: 1rem;
+    padding: 1.3rem;
     background-color: $light-gray;
   }
 
@@ -18,23 +22,65 @@
   }
 
   fieldset {
-    padding: 0;
+    padding: 0 0 2em 0;
     border: none;
   }
 
   textarea {
     width: 100%;
     min-height: 14em;
+    border-color: $primary-color;
+    resize: none;
+  }
+
+  input {
+    border-color: $primary-color;
+    background-color: transparent;
+  }
+
+  .input-half {
+    display: inline-block;
+    width: 50%;
+  }
+
+  .input-half:not(:first-child) {
+    margin-left: -4px;
+  }
+
+  .button-wrapper {
+    padding: 2em 0;
+    text-align: center;
+  }
+
+  .button {
+    padding: 0 10px;
+    text-decoration: none;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 40px;
+    background-color: transparent;
+    min-width: 140px;
+    text-transform: uppercase;
+  }
+
+  .button:hover {
+    background: $primary-color;
+    color: #fff;
   }
 }
 
 
 @media (min-width: 768px) {
   .details {
-    display: flex;
+    .details_row {
+      display: flex;
+    }
 
-   .details_item {
+   .details_item:not(:last-child) {
       flex: 1;
+      border-right: 1px solid #c0c0c0;
     }
 
     .details_title {
