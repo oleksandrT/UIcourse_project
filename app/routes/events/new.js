@@ -10,6 +10,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   actions: {
-    
+    addClass(newClass) {
+      this.get('currentModel.classes').pushObject(newClass);
+    }
   }
 });

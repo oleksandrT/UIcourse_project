@@ -1,7 +1,7 @@
 <form {{action 'addNewClass' on='submit'}}>
-    {{input value=class-time-from placeholder="Time from (hh:mm)" class="input-half"}}
-    {{input value=class-time-to placeholder="Time to (hh:mm)" class="input-half"}}
-    {{input value=title placeholder="Class title"}}
-    {{textarea value=class-description}}
+    {{input value=newClass.timeFrom placeholder="Time from (hh:mm)" class="input-half"}}
+    {{input value=newClass.timeTo placeholder="Time to (hh:mm)" class="input-half"}}
+    {{input value=newClass.title placeholder="Class title"}}
+    {{textarea value=newClass.description}}
     <button class="button" type="submit">Add new</button>
 </form>

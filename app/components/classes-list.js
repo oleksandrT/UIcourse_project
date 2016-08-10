@@ -2,8 +2,9 @@ import Ember from 'ember';
 import Event from '../models/event';
 
 export default Ember.Component.extend({
-    // model() {
-    //     let classesList = Event.create();
-    //     return classesList.classes;
+    // init() {
+    //   this._super(...arguments);
+    //   this.classes = this.attrs.classes;
     // }
+  
 });

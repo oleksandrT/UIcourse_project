@@ -1,5 +1,12 @@
 <ul class="schedule-list">
     {{#each classes as |class|}}
-        <li>{{class.title}}</li>
+        <li>
+            <div class="schedule-list_content">
+                <div class="schedule-list_time">{{class.time}}</div>
+                <div class="schedule-list_title">{{class.title}}</div>
+                <div class="schedule-list_description">{{class.description}}</div>
+                <span class="schedule-list_circle"></span>
+            </div>
+        </li>
     {{/each}}
 </ul>

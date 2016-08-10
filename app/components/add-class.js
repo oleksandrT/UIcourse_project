@@ -1,17 +1,25 @@
 import Ember from 'ember';
 import Event from '../models/event';
 
+var emptyClass = {
+  timeFrom: '',
+  timeTo: '',
+  title: '',
+  description: ''
+};
+
 export default Ember.Component.extend({
+
+    newClass: function() {
+      return Ember.copy(emptyClass);
+    }.property(),
+
     actions: {
-        addNewClass() {
-            let classes = Event.create().classes;
-            console.log('parentModel: ', parentModel);
-            console.log('input - title: ', this.get('title'));
-            classes.push({
-                time: (this.get('class-time-from') - this.get('class-time-to')),
-                title: this.get('title'),
-                description: this.get('class-description')
-            });
-        }
+      addNewClass() {
+        let newClass = this.get('newClass');
+        //todo add validation
+        this.onSubmit(newClass);
+        this.set('newClass', Ember.copy(emptyClass));
+      }
     }
 });
