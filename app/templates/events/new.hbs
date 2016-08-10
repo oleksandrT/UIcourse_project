@@ -34,15 +34,8 @@
                         </div>
                     </li>
                 </ul>
-                <fieldset>
-                  {{!pick-a-time date=(readonly date) on-selected=(action (mut date)) name="time-from" placeholder="Time from" options=(readonly extraPickadateOptions) class="input-half" id="from_1"}}
-                  {{!pick-a-time date=(readonly date) on-selected=(action (mut date)) name="time-to" placeholder="Time to" options=(readonly extraPickadateOptions) class="input-half" id="to_1"}}
-                    <input type="text" name="class-time-from" placeholder="Time from (hh:mm)" class="input-half" >
-                    <input type="text" name="class-time-to" placeholder="Time to (hh:mm)" class="input-half" >
-                    <input type="text" name="class-title" placeholder="Class title">
-                    <textarea name="class-description"></textarea>
-                </fieldset>
-                <button class="button">Add new</button>
+                {{classes-list classes=model.classes}}
+                {{add-class parentModel=model}}
             </div>
         </div>
         <div class="details_item">

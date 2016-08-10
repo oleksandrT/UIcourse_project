@@ -4,7 +4,7 @@
 <section class="events">
     <div class="wrapper">
         <h2>Events</h2>
-        <button class="button-create" {{action 'createevent'}}>Create new</button>
+        {{#link-to "events.new" class="button-create"}}Create new{{/link-to}}
         <div class="events_group">
             <h4>Upcoming</h4>
             <ul class="events_list">

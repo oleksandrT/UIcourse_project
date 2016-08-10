@@ -57,77 +57,68 @@
 </section>
 -->
 
-<form>
-    <section class="banner">
-        <div class="wrapper">
-            <input type="text" name="title" placeholder="Event title">
-            {{pick-a-date date=(readonly date) on-selected=(action (mut date)) placeholder="Event date" options=(readonly extraPickadateOptions)}}
-            <input type="text" name="location" placeholder="Location">
-        </div>
-    </section>
-    <section class="details">
-        <div class="details_row">
-            <div class="details_item">
-                <div class="details_title"><h4>About</h4></div>
-                <div class="details_content">
-                    <textarea name="about"></textarea>
-                </div>
+
+<section class="banner">
+    <div class="wrapper">
+        <input type="text" name="title" placeholder="Event title">
+        {{pick-a-date date=(readonly date) on-selected=(action (mut date)) placeholder="Event date" options=(readonly extraPickadateOptions)}}
+        <input type="text" name="location" placeholder="Location">
+    </div>
+</section>
+<section class="details">
+    <div class="details_row">
+        <div class="details_item">
+            <div class="details_title"><h4>About</h4></div>
+            <div class="details_content">
+                <textarea name="about"></textarea>
             </div>
-            <div class="details_item">
-                <div class="details_title"><h4>Schedule</h4></div>
-                <div class="details_content">
-                    <ul class="schedule-list">
-                        <li>
-                            <div class="schedule-list_content">
-                                <div class="schedule-list_time">10:00 - 12:00</div>
-                                <div class="schedule-list_title">Offline first approach in modern Web applications</div>
-                                <div class="schedule-list_description">On this class we will look into methods to support offline mode and how it is related to modern web apps.</div>
-                                <span class="schedule-list_circle"></span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="schedule-list_content">
-                                <div class="schedule-list_time">12:00 - 14:00</div>
-                                <div class="schedule-list_title">React native once again</div>
-                                <div class="schedule-list_description">All experience learned from year of useing on production.</div>
-                                <span class="schedule-list_circle"></span>
-                            </div>
-                        </li>
-                    </ul>
-                    <fieldset>
-                        {{!pick-a-time date=(readonly date) on-selected=(action (mut date)) name="time-from" placeholder="Time from" options=(readonly extraPickadateOptions) class="input-half" id="from_1"}}
-                        {{!pick-a-time date=(readonly date) on-selected=(action (mut date)) name="time-to" placeholder="Time to" options=(readonly extraPickadateOptions) class="input-half" id="to_1"}}
-                        <input type="text" name="class-time-from" placeholder="Time from (hh:mm)" class="input-half" >
-                        <input type="text" name="class-time-to" placeholder="Time to (hh:mm)" class="input-half" >
-                        <input type="text" name="class-title" placeholder="Class title">
-                        <textarea name="class-description"></textarea>
-                    </fieldset>
+        </div>
+        <div class="details_item">
+            <div class="details_title"><h4>Schedule</h4></div>
+            <div class="details_content">
+                <ul class="schedule-list">
+                    <li>
+                        <div class="schedule-list_content">
+                            <div class="schedule-list_time">10:00 - 12:00</div>
+                            <div class="schedule-list_title">Offline first approach in modern Web applications</div>
+                            <div class="schedule-list_description">On this class we will look into methods to support offline mode and how it is related to modern web apps.</div>
+                            <span class="schedule-list_circle"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="schedule-list_content">
+                            <div class="schedule-list_time">12:00 - 14:00</div>
+                            <div class="schedule-list_title">React native once again</div>
+                            <div class="schedule-list_description">All experience learned from year of useing on production.</div>
+                            <span class="schedule-list_circle"></span>
+                        </div>
+                    </li>
+                </ul>
+                {{add-class}}
+            </div>
+        </div>
+        <div class="details_item">
+            <div class="details_title"><h4>Teachers</h4></div>
+            <div class="details_content">
+                <ul class="teachers-list">
+                    <li>
+                        <div class="teacher-title">Charles Francis Xavier</div>
+                        <div class="teacher-description">World's most powerful telepath, capable of astral projection, mind control, illusion casting, memory manipulation, psychic blasts, and sensing the presence of nearby mutants.</div>
+                    </li>
+                    <li>
+                        <div class="teacher-title">Dr. Henry Philip "Hank" McCoy</div>
+                        <div class="teacher-description">Has superhuman strength, speed, stamina, agility, reflexes, and durability. His former feline-like form gave him night vision, minor pheromone control, enhanced senses and claws.</div>
+                    </li>
+                </ul>
+                <fieldset>
+                    <input type="text" name="teacher-name" placeholder="Teacher name">
+                    <textarea name="teacher-information"></textarea>
                     <button class="button">Add new</button>
-                </div>
-            </div>
-            <div class="details_item">
-                <div class="details_title"><h4>Teachers</h4></div>
-                <div class="details_content">
-                    <ul class="teachers-list">
-                        <li>
-                            <div class="teacher-title">Charles Francis Xavier</div>
-                            <div class="teacher-description">World's most powerful telepath, capable of astral projection, mind control, illusion casting, memory manipulation, psychic blasts, and sensing the presence of nearby mutants.</div>
-                        </li>
-                        <li>
-                            <div class="teacher-title">Dr. Henry Philip "Hank" McCoy</div>
-                            <div class="teacher-description">Has superhuman strength, speed, stamina, agility, reflexes, and durability. His former feline-like form gave him night vision, minor pheromone control, enhanced senses and claws.</div>
-                        </li>
-                    </ul>
-                    <fieldset>
-                        <input type="text" name="teacher-name" placeholder="Teacher name">
-                        <textarea name="teacher-information"></textarea>
-                        <button class="button">Add new</button>
-                    </fieldset>
-                </div>
+                </fieldset>
             </div>
         </div>
-        <div class="button-wrapper">
-            <button class="button">Save</button>
-        </div>
-    </section>
-</form>
+    </div>
+    <div class="button-wrapper">
+        <button class="button">Save</button>
+    </div>
+</section>
