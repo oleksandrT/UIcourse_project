@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 import Event from '../../models/event';
+import Env from 'uicourse-project/config/environment';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   session: Ember.inject.service('session'),
@@ -22,17 +23,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       console.log( this.get('currentModel') );
       Ember.$.ajax({
         type: "POST",
-        url: Env.APP.API_URL + "/api/signup",
-        data: {
-          name: this.get("name"),
-          email: this.get("email"),
-          phone: this.get("phone"),
-          login: this.get("login"),
-          password: this.get("password")
-        }
+        url: Env.APP.API_URL + "/api/events",
+        data: {title: 'Deadpool', class: 'Zapateo'}
       }).done(function () {
-        Ember.$('.form-login').hide();
-        Ember.$('.success-message').show();
+        alert("success!");
       });
     }
   }
