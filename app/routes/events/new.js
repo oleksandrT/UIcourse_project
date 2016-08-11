@@ -22,7 +22,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       console.log( this.get('currentModel') );
       Ember.$.ajax({
         type: "POST",
-        url: "http://localhost:3000/signup",
+        url: Env.APP.API_URL + "/signup",
         data: {
           name: this.get("name"),
           email: this.get("email"),
