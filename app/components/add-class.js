@@ -21,8 +21,7 @@ export default Ember.Component.extend({
         let newClass = this.get('newClass');
 
         //todo: add validation
-
-        console.log(newClass);
+        
         this.onSubmit(newClass);
         this.set('newClass', Ember.copy(emptyClass));
       }

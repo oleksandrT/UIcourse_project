@@ -4,7 +4,6 @@ export default Ember.Object.extend({
   title: '',
   date: '',
   location: '',
-  classAbout: '',
   description: '',
   classes: [],
   teachers: []

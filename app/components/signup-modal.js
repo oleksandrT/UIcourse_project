@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import ModalDialog from './modal-dialog';
+import Env from 'uicourse-project/config/environment';
 
 export default ModalDialog.extend({
     session: Ember.inject.service('session'),
@@ -11,7 +12,7 @@ export default ModalDialog.extend({
           let _this = this;
           Ember.$.ajax({
               type: "POST",
-              url: "http://localhost:3000/signup",
+              url: Env.APP.API_URL + "/signup",
               data: {
                 name: this.get("name"),
                 email: this.get("email"),

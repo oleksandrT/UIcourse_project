@@ -1,8 +1,8 @@
 <section class="banner">
     <div class="wrapper">
-        {{input value=class-title placeholder="Event title"}}
-        {{pick-a-date date=(readonly date) on-selected=(action (mut date)) placeholder="Event date" options=(readonly extraPickadateOptions)}}
-        {{input value=class-location placeholder="location"}}
+        {{input value=model.title placeholder="Event title"}}
+        {{pick-a-date date=(readonly date) on-selected=(action (mut date)) placeholder="Event date" options=(readonly extraPickadateOptions) value=model.date}}
+        {{input value=model.location placeholder="location"}}
     </div>
 </section>
 <section class="details">
@@ -10,7 +10,7 @@
         <div class="details_item">
             <div class="details_title"><h4>About</h4></div>
             <div class="details_content">
-                {{textarea value=model.classAbout}}
+                {{textarea value=model.description}}
             </div>
         </div>
         <div class="details_item">
@@ -61,6 +61,6 @@
         </div>
     </div>
     <div class="button-wrapper">
-        <button class="button" {{action 'updateClassesList'}}>Save</button>
+        <button class="button" {{action 'saveEvent'}}>Save</button>
     </div>
 </section>

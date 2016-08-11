@@ -16,6 +16,25 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
     addTeacher(newTeacher) {
       this.get('currentModel.teachers').pushObject(newTeacher);
+    },
+
+    saveEvent() {
+      console.log( this.get('currentModel') );
+      Ember.$.ajax({
+        type: "POST",
+        url: "http://localhost:3000/signup",
+        data: {
+          name: this.get("name"),
+          email: this.get("email"),
+          phone: this.get("phone"),
+          login: this.get("login"),
+          password: this.get("password")
+        }
+      }).done(function () {
+        console.log(_this);
+        Ember.$('.form-login').hide();
+        Ember.$('.success-message').show();
+      });
     }
   }
 });
