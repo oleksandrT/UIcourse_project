@@ -12,7 +12,7 @@ export default ModalDialog.extend({
           let _this = this;
           Ember.$.ajax({
               type: "POST",
-              url: Env.APP.API_URL + "/signup",
+              url: Env.APP.API_URL + "/api/signup",
               data: {
                 name: this.get("name"),
                 email: this.get("email"),

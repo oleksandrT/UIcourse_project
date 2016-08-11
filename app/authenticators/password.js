@@ -3,7 +3,7 @@ import Ember from 'ember';
 import Env from 'uicourse-project/config/environment';
 
 export default oAuth2.extend({
-    serverTokenEndpoint: Env.APP.API_URL + '/login',
+    serverTokenEndpoint: Env.APP.API_URL + '/api/login',
 
     makeRequest(url, data) {
         const options = {
