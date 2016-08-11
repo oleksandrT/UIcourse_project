@@ -31,7 +31,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
           password: this.get("password")
         }
       }).done(function () {
-        console.log(_this);
         Ember.$('.form-login').hide();
         Ember.$('.success-message').show();
       });
