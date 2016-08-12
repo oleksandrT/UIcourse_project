@@ -20,11 +20,16 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     },
 
     saveEvent() {
-      console.log( this.get('currentModel') );
+      // get user id
+      let authStorage = localStorage.getItem('ember_simple_auth:session');
+      let dbId = JSON.parse(authStorage).authenticated.user._id;
       Ember.$.ajax({
         type: "POST",
         url: Env.APP.API_URL + "/api/events",
-        data: {title: 'Deadpool', class: 'Zapateo'}
+        data: {
+          event: JSON.stringify(this.get('currentModel').serialize()),
+          userId: dbId
+        }
       }).done(function () {
         alert("success!");
       });
