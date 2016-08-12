@@ -8,7 +8,8 @@ App.Serializable = Ember.Mixin.create({
     var result = {};
     for (var key in Ember.$.extend(true, {}, this))
     {
-      // Skip these
+      //console.log(key, ' : ', typeof this[key], ' / isArray: ', Ember.$.isArray(this[key]));
+
       if (key === 'isInstance' ||
         key === 'isDestroyed' ||
         key === 'isDestroying' ||
@@ -18,8 +19,46 @@ App.Serializable = Ember.Mixin.create({
       {
         continue;
       }
+
+      // if parameter is an array itself
+      if (typeof this[key] === 'object' &&
+        Ember.$.isArray(this[key]) === true)
+      {
+        var childObject = [];
+        var currentChild = Ember.$.extend(true, {}, this[key]);
+        //console.log(currentChild);
+        //
+        for (var param in currentChild) {
+          // if property is a number in string format
+          // this is because we have array-like object here and need to pull our data
+          if (param >>> 0 === parseFloat(param))
+          {
+            var tempObject = {};
+            for (var childKey in currentChild[param]) {
+              if (key === 'isInstance' ||
+                key === 'isDestroyed' ||
+                key === 'isDestroying' ||
+                key === 'concatenatedProperties' ||
+                key === 'mergedProperties' ||
+                typeof this[childKey] === 'function')
+              {
+                continue;
+              }
+              console.log('currentChild[param][childKey]: ', currentChild[param][childKey]);
+              tempObject[childKey] = currentChild[param][childKey];
+            }
+            childObject.push(tempObject);
+            tempObject = {};
+          }
+        };
+        //
+        result[key] = childObject;
+        continue;
+      }
       result[key] = this[key];
     }
+    //console.log('this: ', this);
+    console.log('result: ', result);
     return result;
   }
 });
@@ -32,12 +71,3 @@ export default Ember.Object.extend(App.Serializable, {
   classes: [],
   teachers: []
 });
-
-// export default Ember.Object.extend({
-//   title: '',
-//   date: '',
-//   location: '',
-//   description: '',
-//   classes: [],
-//   teachers: []
-// });

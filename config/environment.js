@@ -51,5 +51,13 @@ module.exports = function(environment) {
 
   }
 
+  ENV['ember-cli-pickadate'] = {
+    date: {
+      format: 'dd/mm/yyyy',
+      formatSubmit: 'dd/mm/yyyy'
+    },
+    time: {}
+  }
+
   return ENV;
 };

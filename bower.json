@@ -6,6 +6,7 @@
     "ember-cli-test-loader": "0.2.2",
     "ember-qunit-notifications": "0.1.0",
     "bootstrap-datepicker": "^1.6.4",
-    "pickadate": "^3.5.6"
+    "pickadate": "^3.5.6",
+    "pikaday-time-picker": "^1.4.3"
   }
 }
