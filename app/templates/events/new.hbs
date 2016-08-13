@@ -16,26 +16,6 @@
         <div class="details_item">
             <div class="details_title"><h4>Schedule</h4></div>
             <div class="details_content">
-                {{!
-                <ul class="schedule-list">
-                    <li>
-                        <div class="schedule-list_content">
-                            <div class="schedule-list_time">10:00 - 12:00</div>
-                            <div class="schedule-list_title">Offline first approach in modern Web applications</div>
-                            <div class="schedule-list_description">On this class we will look into methods to support offline mode and how it is related to modern web apps.</div>
-                            <span class="schedule-list_circle"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="schedule-list_content">
-                            <div class="schedule-list_time">12:00 - 14:00</div>
-                            <div class="schedule-list_title">React native once again</div>
-                            <div class="schedule-list_description">All experience learned from year of useing on production.</div>
-                            <span class="schedule-list_circle"></span>
-                        </div>
-                    </li>
-                </ul>
-                }}
                 {{classes-list classes=model.classes}}
                 {{add-class onSubmit=(route-action 'addClass')}}
             </div>
@@ -43,18 +23,6 @@
         <div class="details_item">
             <div class="details_title"><h4>Teachers</h4></div>
             <div class="details_content">
-                <!--
-                <ul class="teachers-list">
-                    <li>
-                        <div class="teacher-name">Charles Francis Xavier</div>
-                        <div class="teacher-description">World's most powerful telepath, capable of astral projection, mind control, illusion casting, memory manipulation, psychic blasts, and sensing the presence of nearby mutants.</div>
-                    </li>
-                    <li>
-                        <div class="teacher-name">Dr. Henry Philip "Hank" McCoy</div>
-                        <div class="teacher-description">Has superhuman strength, speed, stamina, agility, reflexes, and durability. His former feline-like form gave him night vision, minor pheromone control, enhanced senses and claws.</div>
-                    </li>
-                </ul>
-                -->
                 {{teachers-list teachers=model.teachers}}
                 {{add-teacher onSubmit=(route-action 'addTeacher')}}
             </div>
@@ -62,5 +30,8 @@
     </div>
     <div class="button-wrapper">
         <button class="button" {{action 'saveEvent'}}>Save</button>
+        {{#if wasSuccess}}
+            <div class="form-message">Event was saved successfully</div>
+        {{/if}}
     </div>
 </section>

@@ -6,6 +6,9 @@ import Env from 'uicourse-project/config/environment';
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   session: Ember.inject.service('session'),
 
+  wasSuccess: false,
+  test: 'test',
+
   model() {
     return Event.create();
   },
@@ -20,13 +23,17 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     },
 
     saveEvent() {
+      var self = this;
       // get user id
       let authStorage = localStorage.getItem('ember_simple_auth:session');
       let dbId = JSON.parse(authStorage).authenticated.user._id;
       let formData = JSON.stringify(this.get('currentModel').serialize());
+      //console.log('model: ', this.get('currentModel'));
       console.log('formData: ', this.get('currentModel'));
-      console.log('formData (formated): ', formData);
-      console.log('date: ', formData.date, typeof formData.date);
+      //let cls = this.get('currentModel').classes[0];
+      //console.log('time: ', cls.time);
+      //console.log('formData (formated): ', formData);
+      //console.log('date: ', formData.date, typeof formData.date);
       Ember.$.ajax({
         type: "POST",
         url: Env.APP.API_URL + "/api/events",
@@ -35,7 +42,9 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
           userId: dbId
         }
       }).done(function () {
-        alert("success!");
+        self.set('wasSuccess');
+        alert('Event was saved successfully');
+        self.transitionTo('dashboard');
       });
     }
   }

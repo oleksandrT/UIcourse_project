@@ -35,22 +35,23 @@ App.Serializable = Ember.Mixin.create({
           {
             var tempObject = {};
             for (var childKey in currentChild[param]) {
-              if (key === 'isInstance' ||
-                key === 'isDestroyed' ||
-                key === 'isDestroying' ||
-                key === 'concatenatedProperties' ||
-                key === 'mergedProperties' ||
+              if (childKey === 'isInstance' ||
+                childKey === 'isDestroyed' ||
+                childKey === 'isDestroying' ||
+                childKey === 'concatenatedProperties' ||
+                childKey === 'mergedProperties' ||
+                childKey === 'time' ||
                 typeof this[childKey] === 'function')
               {
                 continue;
               }
-              console.log('currentChild[param][childKey]: ', currentChild[param][childKey]);
+              //console.log('currentChild[param][childKey]: ', currentChild[param][childKey]);
               tempObject[childKey] = currentChild[param][childKey];
             }
             childObject.push(tempObject);
             tempObject = {};
           }
-        };
+        }
         //
         result[key] = childObject;
         continue;
@@ -58,7 +59,7 @@ App.Serializable = Ember.Mixin.create({
       result[key] = this[key];
     }
     //console.log('this: ', this);
-    console.log('result: ', result);
+    //console.log('result: ', result);
     return result;
   }
 });
