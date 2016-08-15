@@ -31,12 +31,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       // serialize form data
       let formData = JSON.stringify(this.get('currentModel').serialize());
 
-      //console.log('model: ', this.get('currentModel'));
-      //console.log('formData: ', this.get('currentModel'));
-      //let cls = this.get('currentModel').classes[0];
-      //console.log('time: ', cls.time);
-      //console.log('formData (formated): ', formData);
-      //console.log('date: ', formData.date, typeof formData.date);
+      // send data to server
       Ember.$.ajax({
         type: "POST",
         url: Env.APP.API_URL + "/api/events",
@@ -50,7 +45,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         let linkToEvent = '/events/' + data.eventId;
         let message = 'Event was saved successfully \nShare the link so people can register to your event \n' + linkToEvent;
         alert(message);
-        self.transitionTo('dashboard');
+        self.get('currentModel').clearModel();
+        //self.transitionTo('dashboard');
       });
     }
   }

@@ -61,6 +61,15 @@ App.Serializable = Ember.Mixin.create({
     //console.log('this: ', this);
     //console.log('result: ', result);
     return result;
+  },
+
+  clearModel: function () {
+    Ember.set(this, 'title', '');
+    Ember.set(this, 'date', '');
+    Ember.set(this, 'location', '');
+    Ember.set(this, 'description', '');
+    Ember.set(this, 'classes', []);
+    Ember.set(this, 'teachers', []);
   }
 });
 
