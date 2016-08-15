@@ -10,6 +10,8 @@ Router.map(function() {
   this.route('elements');
   this.route('events', function() {
     this.route('new');
+    this.route('event', {path: 'event/:id'});
+    this.route('register');
   });
 });
 

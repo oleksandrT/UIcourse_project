@@ -1,0 +1,52 @@
+<section class="banner">
+    <div class="wrapper">
+        <h1>{{model.title}}</h1>
+        <h4>{{model.date}}</h4>
+        <h4>{{model.location}}</h4>
+    </div>
+</section>
+<section class="details">
+    <div class="details_row">
+        <div class="details_item">
+            <div class="details_title"><h4>About</h4></div>
+            <div class="details_content">{{model.description}}</div>
+        </div>
+        <div class="details_item">
+            <div class="details_title"><h4>Schedule</h4></div>
+            <div class="details_content">
+                {{#if model.classes.length}}
+                    <ul class="schedule-list">
+                      {{#each model.classes as |class|}}
+                          <li>
+                              <div class="schedule-list_content">
+                                  <div class="schedule-list_time">{{class.timeFrom}} - {{class.timeTo}}</div>
+                                  <div class="schedule-list_title">{{class.title}}</div>
+                                  <div class="schedule-list_description">{{class.description}}</div>
+                                  <span class="schedule-list_circle"></span>
+                              </div>
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
+            </div>
+        </div>
+        <div class="details_item">
+            <div class="details_title"><h4>Teachers</h4></div>
+            <div class="details_content">
+                {{#if model.classes.length}}
+                    <ul class="teachers-list">
+                        {{#each model.teachers as |teacher|}}
+                        <li>
+                            <div class="teacher-name">{{teacher.name}}</div>
+                            <div class="teacher-description">{{teacher.description}}</div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="button-wrapper">
+        <button class="button" {{action 'doRegister'}}>Register</button>
+    </div>
+</section>

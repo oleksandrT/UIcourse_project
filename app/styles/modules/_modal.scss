@@ -35,6 +35,10 @@
       text-align: center;
       line-height: 5em;
     }
+
+    .label-success {
+      color: $complementary-color;
+    }
   }
 
   @keyframes slideTop {

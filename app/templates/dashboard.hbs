@@ -6,17 +6,10 @@
         <h2>Events</h2>
         {{#link-to "events.new" class="button-create"}}Create new{{/link-to}}
         <div class="events_group">
-            <h4>Upcoming</h4>
-{{events-list events=model.events}}
-            <ul class="events_list">
-                <li><a href="#">Gustavo and Gabriella seminar</a><button class="button-edit">Edit</button></li>
-                <li><a href="#">Workshops with Nito & Elba</a><button class="button-edit">Edit</button></li>
-                <li><a href="#">Service worker meetup</a><button class="button-edit">Edit</button></li>
-                <li><a href="#">JS day</a><button class="button-edit">Edit</button></li>
-                <li><a href="#">Coffee coding</a><button class="button-edit">Edit</button></li>
-            </ul>
+            <!--<h4>Upcoming</h4>-->
+            {{events-list events=model.events}}
         </div>
-        <div class="events_group">
+        <!--<div class="events_group">
             <h4>Past</h4>
             <ul class="events_list">
                 <li><a href="#">Gustavo and Gabriella seminar</a><button class="button-edit">Edit</button></li>
@@ -25,6 +18,6 @@
                 <li><a href="#">JS day</a><button class="button-edit">Edit</button></li>
                 <li><a href="#">Coffee coding</a><button class="button-edit">Edit</button></li>
             </ul>
-        </div>
+        </div>-->
     </div>
 </section>

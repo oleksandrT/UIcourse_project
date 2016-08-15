@@ -27,9 +27,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       // get user id
       let authStorage = localStorage.getItem('ember_simple_auth:session');
       let dbId = JSON.parse(authStorage).authenticated.user._id;
+
+      // serialize form data
       let formData = JSON.stringify(this.get('currentModel').serialize());
+
       //console.log('model: ', this.get('currentModel'));
-      console.log('formData: ', this.get('currentModel'));
+      //console.log('formData: ', this.get('currentModel'));
       //let cls = this.get('currentModel').classes[0];
       //console.log('time: ', cls.time);
       //console.log('formData (formated): ', formData);
@@ -41,9 +44,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
           event: formData,
           userId: dbId
         }
-      }).done(function () {
+      }).done(function (data) {
         self.set('wasSuccess');
-        alert('Event was saved successfully');
+        console.log(data);
+        let linkToEvent = '/events/' + data.eventId;
+        let message = 'Event was saved successfully \nShare the link so people can register to your event \n' + linkToEvent;
+        alert(message);
         self.transitionTo('dashboard');
       });
     }

@@ -1,14 +1,8 @@
 {{#if events.length}}
     <ul class="events_list">
-      {{#each events as |event|}}
+        {{#each events as |event|}}
           <li>
-              <div class="schedule-list_content">
-                  <div class="schedule-list_title">{{class.title}}</div>
-                  <div class="schedule-list_description">{{class.description}}</div>
-              </div>
-          </li>
-          <li>
-              <a href="#">{{event.title}}</a>
+              <a href="{{event.link}}">{{event.title}}</a>
               <!--<button class="button-edit">Edit</button>-->
           </li>
       {{/each}}

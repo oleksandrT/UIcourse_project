@@ -1,0 +1,56 @@
+<section class="banner">
+    <div class="wrapper">
+        <h1>Event title</h1>
+        <h4>10/09.2017</h4>
+        <h4>Kyiv, Ukraine</h4>
+    </div>
+</section>
+<section class="registration">
+    <div class="registration_title"><h4>Registration</h4></div>
+    <div class="registration_container">
+          <form {{action 'register' on='submit'}}>
+              <legend>Personal information</legend>
+              <fieldset>
+                  <label for="name">Your name</label>
+                  {{input value=name id="name"}}
+
+                  <label for="email">Your email</label>
+                  {{input value=email id="email" type="email"}}
+
+                  <label for="phone">Your phone number</label>
+                  {{input value=email id="phone" type="tel"}}
+              </fieldset>
+
+              <fieldset>
+                  <legend>Classes</legend>
+                  <ul class="schedule-list">
+                      <li>
+                          <label>
+                              <input type="checkbox" value="0">
+                              <div class="schedule-list_content">
+                                  <div class="schedule-list_time">10:00 - 12:00</div>
+                                  <div class="schedule-list_title">Offline first approach in modern Web applications</div>
+                                  <div class="schedule-list_description">On this class we will look into methods to support offline mode and how it is related to modern web apps.</div>
+                                  <span class="schedule-list_circle"></span>
+                              </div>
+                          </label>
+                      </li>
+                      <li>
+                          <label>
+                              <input type="checkbox" value="1">
+                              <div class="schedule-list_content">
+                                  <div class="schedule-list_time">12:00 - 14:00</div>
+                                  <div class="schedule-list_title">React native once again</div>
+                                  <div class="schedule-list_description">All experience learned from year of useing on production.</div>
+                                  <span class="schedule-list_circle"></span>
+                              </div>
+                          </label>
+                      </li>
+                  </ul>
+              </fieldset>
+              <div class="button-wrapper">
+                  <button class="button" type="submit">Register</button>
+              </div>
+          </form>
+    </div>
+</section>
