@@ -1,6 +1,7 @@
 <section class="banner">
     <div class="wrapper">
         {{input value=model.title placeholder="Event title"}}
+          {{#if model.errors.title}}{{model.errors.title}}{{/if}}
         {{!pick-a-date date=(readonly date) on-selected=(action (mut date)) placeholder="Event date" options=(readonly extraPickadateOptions) value=model.date }}
         {{input value=model.location placeholder="location"}}
 

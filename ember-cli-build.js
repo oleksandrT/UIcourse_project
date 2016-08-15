@@ -24,7 +24,8 @@ module.exports = function(defaults) {
   // });
 
   // Pikaday datetime picker assets
-  app.import("bower_components/pikaday-time-picker/plugins/pikaday.jquery.js");
+  app.import("bower_components/pikaday-time-picker/pikaday.js");
+  // app.import("bower_components/pikaday-time-picker/plugins/pikaday.jquery.js");
   app.import("bower_components/pikaday-time-picker/css/pikaday.css");
   app.import("bower_components/pikaday-time-picker/css/pikaday-time.css");
   app.import("bower_components/pikaday-time-picker/css/theme.css");

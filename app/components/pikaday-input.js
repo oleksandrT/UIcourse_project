@@ -5,7 +5,7 @@ export default Ember.TextField.extend({
 
   didInsertElement: function(){
     console.log(this);
-    picker = new Pikaday({
+    let picker = new Pikaday({
       field: this.$()[0]
     });
     this.set("_picker", picker);
@@ -23,7 +23,7 @@ export default Ember.TextField.extend({
   }.observes("value"),
 
   willDestroyElement: function(){
-    picker = this.get("_picker");
+    let picker = this.get("_picker");
     if (picker) {
       picker.destroy();
     }
