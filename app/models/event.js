@@ -68,8 +68,8 @@ App.Serializable = Ember.Mixin.create({
     Ember.set(this, 'date', '');
     Ember.set(this, 'location', '');
     Ember.set(this, 'description', '');
-    Ember.set(this, 'classes', []);
-    Ember.set(this, 'teachers', []);
+    Ember.get(this, 'classes').length = 0;
+    Ember.get(this, 'teachers').length = 0;
   }
 });
 

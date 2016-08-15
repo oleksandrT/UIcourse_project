@@ -7,7 +7,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   session: Ember.inject.service('session'),
 
   wasSuccess: false,
-  test: 'test',
 
   model() {
     return Event.create();
@@ -41,12 +40,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         }
       }).done(function (data) {
         self.set('wasSuccess');
-        console.log(data);
+        console.log('data from server: ', data);
         let linkToEvent = '/events/' + data.eventId;
         let message = 'Event was saved successfully \nShare the link so people can register to your event \n' + linkToEvent;
         alert(message);
         self.get('currentModel').clearModel();
-        //self.transitionTo('dashboard');
+        self.transitionTo('dashboard');
       });
     }
   }
