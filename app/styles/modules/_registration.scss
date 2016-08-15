@@ -33,6 +33,7 @@
   input {
     border-color: $primary-color;
     background-color: transparent;
+    margin-top: 5px;
   }
 
   .button-wrapper {
@@ -70,10 +71,15 @@
       margin-bottom: 2em;
     }
 
-    input[type="checkbox"] {
+    .form-checkbox {
       position: absolute;
-      top: 2px;
-      left: -30px;
+      left: -10%;
+      display: block;
+      height: 0;
+    }
+
+    .form-checkbox:checked + .schedule-list_content .schedule-list_circle {
+      background-color: $complementary-color;
     }
 
     .schedule-list_time {
