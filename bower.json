@@ -7,6 +7,8 @@
     "ember-qunit-notifications": "0.1.0",
     "bootstrap-datepicker": "^1.6.4",
     "pickadate": "^3.5.6",
-    "pikaday-time-picker": "^1.4.3"
+    "pikaday-time-picker": "^1.4.3",
+    "moment": "^2.14.1",
+    "glyphicons-halflings": "*"
   }
 }

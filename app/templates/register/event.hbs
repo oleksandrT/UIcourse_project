@@ -1,0 +1,52 @@
+<section class="banner">
+    <div class="wrapper">
+        <h1>{{model.event.title}}</h1>
+        <h4>{{model.event.date}}</h4>
+        <h4>{{model.event.location}}</h4>
+    </div>
+</section>
+<section class="registration">
+    <div class="registration_title"><h4>Registration</h4></div>
+    <div class="registration_container">
+        <form {{action 'register' classesList on='submit'}}>
+            <legend>Personal information</legend>
+            <fieldset>
+                <label for="name">Your name</label>
+                {{input value=model.participant.name id="name"}}
+
+                <label for="email">Your email</label>
+                {{input value=model.participant.email id="email" type="email"}}
+
+                <label for="phone">Your phone number</label>
+                {{input value=model.participant.phone id="phone" type="tel"}}
+            </fieldset>
+
+            <fieldset>
+                <legend>Classes</legend>
+                {{#if classesList.length}}
+                    <ul class="schedule-list">
+
+                        {{#each classesList as |class|}}
+                            <li>
+                                <label>
+                                    {{input type="checkbox" class="form-checkbox" checked=class.checked change=(action 'checkboxClick' class)}}
+                                    {{!input-checkbox class="form-checkbox"  checked=class.checked on-change=(action 'checkboxClick' class)}}
+                                    <div class="schedule-list_content">
+                                        <div class="schedule-list_time">{{class.cls.timeFrom}} - {{class.cls.timeTo}}</div>
+                                        <div class="schedule-list_title">{{class.cls.title}}</div>
+                                        <div class="schedule-list_description">{{class.cls.description}}</div>
+                                        <span class="schedule-list_circle"></span>
+                                    </div>
+                                </label>
+                            </li>
+                        {{/each}}
+
+                    </ul>
+                {{/if}}
+            </fieldset>
+            <div class="button-wrapper">
+                <button class="button" type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</section>

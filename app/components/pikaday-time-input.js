@@ -7,9 +7,13 @@ export default Ember.TextField.extend({
     console.log(this);
     let picker = new Pikaday({
       field: this.$()[0],
-      format: 'YYYY-MM-DD',
-      position: 'bottom left',
-      showTime: false
+      format: 'HH:mm',
+      showTime: true,
+      use24hour: true,
+      incrementHourBy: 1,
+      incrementMinuteBy: 1,
+      autoClose: true,
+      showDate: false
     });
     this.set("_picker", picker);
   },

@@ -1,6 +1,8 @@
 <form {{action 'addNewClass' on='submit'}}>
-    {{input value=newClass.timeFrom placeholder="Time from (hh:mm)" class="input-half"}}
-    {{input value=newClass.timeTo placeholder="Time to (hh:mm)" class="input-half"}}
+    {{pikaday-time-input value=newClass.timeFrom placeholder="Time from (hh:mm)" class="input-half"}}
+  {{pikaday-time-input value=newClass.timeTo placeholder="Time to (hh:mm)" class="input-half"}}
+    {{!input value=newClass.timeFrom placeholder="Time from (hh:mm)" class="input-half"}}
+    {{!input value=newClass.timeTo placeholder="Time to (hh:mm)" class="input-half"}}
     {{input value=newClass.title placeholder="Class title"}}
     {{textarea value=newClass.description}}
     <button class="button" type="submit">Add new</button>

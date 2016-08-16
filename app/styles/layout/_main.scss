@@ -50,3 +50,13 @@ textarea {
   border-width: 2px;
   border-style: solid;
 }
+
+.glyphicon-triangle-bottom:before {
+  //content: "\e252";
+  content: "\25BC";
+}
+.glyphicon-triangle-top:before {
+  //content: "\e253";
+  content: "\25B2";
+}
+

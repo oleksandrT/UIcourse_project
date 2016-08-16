@@ -58,6 +58,7 @@
   }
 
   .button {
+    display: inline-block;
     padding: 0 10px;
     text-decoration: none;
     border: 2px solid $primary-color;
@@ -132,6 +133,14 @@
     text-transform: uppercase;
     font-weight: 800;
     color: $complementary-color;
+  }
+
+  .error-message {
+    font-size: 0.9em;
+    text-transform: none;
+    color: $complementary-color;
+    margin-top: -10px;
+    position: relative;
   }
 }
 

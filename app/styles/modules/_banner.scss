@@ -42,6 +42,14 @@
   :-ms-input-placeholder {
     color: #fff;
   }
+
+  .error-message {
+    font-size: 0.9em;
+    text-transform: none;
+    color: $complementary-color;
+    margin-top: -20px;
+    position: relative;
+  }
 }
 
 .banner-thin {

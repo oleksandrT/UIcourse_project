@@ -1,8 +1,8 @@
 <section class="banner">
     <div class="wrapper">
-        <h1>Event title</h1>
-        <h4>10/09.2017</h4>
-        <h4>Kyiv, Ukraine</h4>
+        <h1>{{model.event.title}}</h1>
+        <h4>{{model.event.date}}</h4>
+        <h4>{{model.event.location}}</h4>
     </div>
 </section>
 <section class="registration">
@@ -12,13 +12,13 @@
               <legend>Personal information</legend>
               <fieldset>
                   <label for="name">Your name</label>
-                  {{input value=name id="name"}}
+                  {{input value=model.participant.name id="name"}}
 
                   <label for="email">Your email</label>
-                  {{input value=email id="email" type="email"}}
+                  {{input value=model.participant.email id="email" type="email"}}
 
                   <label for="phone">Your phone number</label>
-                  {{input value=phone id="phone" type="tel"}}
+                  {{input value=model.participant.phone id="phone" type="tel"}}
               </fieldset>
 
               <fieldset>

@@ -47,6 +47,7 @@
         </div>
     </div>
     <div class="button-wrapper">
-        <button class="button" {{action 'doRegister'}}>Register</button>
+        {{!--<button class="button" {{action 'doRegister'}}>Register</button>--}}
+        {{#link-to 'register.event' (query-params id=model.eventId)  class="button"}}Register{{/link-to}}
     </div>
 </section>

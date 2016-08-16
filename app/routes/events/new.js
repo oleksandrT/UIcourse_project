@@ -7,7 +7,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   session: Ember.inject.service(),
   ajax: Ember.inject.service(),
 
-  wasSuccess: false,
+  modalVisible: false,
 
   model() {
     return Event.create();
@@ -17,22 +17,38 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     let model = this.get('currentModel');
     let errors = {};
     if (model.get('title').length < 1) {
-      errors.title = 'Field title is required';
+      errors.title = 'Field is required';
+    }
+    if (model.get('date').length < 1) {
+      errors.date = 'Field is required';
+    }
+    if (model.get('location').length < 1) {
+      errors.location = 'Field is required';
+    }
+    if (model.get('description').length < 1) {
+      errors.description = 'Field is required';
     }
      return errors;
   },
 
   onResponse(response) {
-    this.set('wasSuccess');
+    this.get('currentModel').set('modalVisible', true);
     console.log('data from server: ', response);
-    let linkToEvent = '/events/' + response.eventId;
-    let message = 'Event was saved successfully \nShare the link so people can register to your event \n' + linkToEvent;
-    alert(message);
-    this.get('currentModel').clearModel();
-    this.transitionTo('dashboard');
+    // let linkToEvent = '/events/' + response.eventId;
+    this.get('currentModel').set('eventId', response.eventId);
+    //let message = 'Event was saved successfully \nShare the link so people can register to your event \n' + linkToEvent;
+    //alert(message);
+    //this.get('currentModel').clearModel();
+    //this.transitionTo('dashboard');
   },
 
   actions: {
+    closeModal() {
+      this.get('currentModel').set('modalVisible', true);
+      this.get('currentModel').clearModel();
+      this.transitionTo('dashboard');
+    },
+
     addClass(newClass) {
       this.get('currentModel.classes').pushObject(newClass);
     },
@@ -48,7 +64,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
       if (Object.keys(errors).length) {
         this.get('currentModel').set('errors', errors);
-        alert('error');
+        //alert('error');
         return;
       }
 

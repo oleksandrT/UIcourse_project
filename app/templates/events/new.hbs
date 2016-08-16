@@ -1,11 +1,19 @@
 <section class="banner">
     <div class="wrapper">
         {{input value=model.title placeholder="Event title"}}
-          {{#if model.errors.title}}{{model.errors.title}}{{/if}}
-        {{!pick-a-date date=(readonly date) on-selected=(action (mut date)) placeholder="Event date" options=(readonly extraPickadateOptions) value=model.date }}
-        {{input value=model.location placeholder="location"}}
+        {{#if model.errors.title}}
+          <p class="error-message">{{model.errors.title}}</p>
+        {{/if}}
 
-        {{pikaday-input value=model.date}}
+        {{pikaday-input value=model.date placeholder="Event date"}}
+        {{#if model.errors.date}}
+          <p class="error-message">{{model.errors.date}}</p>
+        {{/if}}
+
+        {{input value=model.location placeholder="location"}}
+        {{#if model.errors.location}}
+          <p class="error-message">{{model.errors.location}}</p>
+        {{/if}}
     </div>
 </section>
 <section class="details">
@@ -14,6 +22,9 @@
             <div class="details_title"><h4>About</h4></div>
             <div class="details_content">
                 {{textarea value=model.description}}
+                {{#if model.errors.description}}
+                  <p class="error-message">{{model.errors.description}}</p>
+                {{/if}}
             </div>
         </div>
         <div class="details_item">
@@ -38,3 +49,7 @@
         {{/if}}
     </div>
 </section>
+
+{{#if model.modalVisible}}
+  {{success-modal eventId=model.eventId onclose=(route-action 'closeModal')}}
+{{/if}}

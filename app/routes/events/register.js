@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Env from 'uicourse-project/config/environment';
+//import Env from 'uicourse-project/config/environment';
 
 export default Ember.Route.extend({
   // model: function(params) {
