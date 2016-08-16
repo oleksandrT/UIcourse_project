@@ -30,6 +30,10 @@
       text-align: center;
     }
 
+    p {
+      text-align: center;
+    }
+
     .success-message {
       display: none;
       text-align: center;
@@ -38,6 +42,31 @@
 
     .label-success {
       color: $complementary-color;
+    }
+
+    .button {
+      display: block;
+      padding: 0 10px;
+      text-decoration: none;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      line-height: 40px;
+      background-color: transparent;
+      min-width: 140px;
+      text-transform: uppercase;
+      margin: 1rem auto;
+    }
+
+    .button:hover {
+      background: $primary-color;
+      color: #fff;
+    }
+
+    a {
+      display: block;
+      text-align: center;
     }
   }
 

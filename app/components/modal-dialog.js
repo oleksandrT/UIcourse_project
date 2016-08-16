@@ -10,6 +10,13 @@ export default Ember.Component.extend({
 
     close() {
         this.$().removeClass('show').addClass('hide');
-        setTimeout( () => Ember.run(this, 'onclose'), 500 );
+        //setTimeout( () => Ember.run(this, 'onclose'), 500 );
+        Ember.run.later(this, 'onclose', 500);
+    },
+
+    actions: {
+      close() {
+        this.close();
+      }
     }
 });

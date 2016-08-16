@@ -8,54 +8,43 @@ const Participant = Ember.Object.extend({
   classes: []
 });
 
-// const ClassItem = Ember.Object.extend({
-//   timeFrom: '',
-//   timeTo: '',
-//   title: '',
-//   description: '',
-//   selected: false
-// });
-
 export default Ember.Route.extend({
   ajax: Ember.inject.service(),
 
-  //modalVisible: this.set('modalVisible', true),
+  //modalVisible: false,
 
   model: function(params) {
     return Ember.RSVP.hash({
-      event: this.get('ajax').request(Env.APP.API_URL + '/api/events/' + params.id),
+      event: this.get('ajax').request(Env.APP.API_URL + '/api/events/' + params.id).then(r => Ember.Object.create(r)),
       eventId: params.id,
-      participant: Participant.create()
+      participant: Participant.create(),
+      modalVisible: false,
+      isSuccess: false
     });
   },
-  //
-  // setupController: function(controller, model) {
-  //   controller.set('event', model.event);
-  //   controller.set('eventId', model.eventId);
-  //   controller.set('participant', model.participant);
-  //   //controller.set('classesList', model.classesList);
-  // },
 
   onResponse() {
     console.log('onResponse');
-    //this.get('currentModel').set('modalVisible', true);
+    this.set('currentModel.modalVisible', true);
   },
 
   actions: {
     register(classesList) {
-      //console.log('model: ', this.get('currentModel'));
       this.get('currentModel.participant').set('classes', classesList);
 
       // serialize form data
       let formData = JSON.stringify(this.get('currentModel'));
-      // console.log(Env.APP.API_URL + '/api/participants');
-      // console.log('formData: ', formData);
-      // console.log('type of formData: ', typeof formData);
+      console.log('property: ', this.get('modalVisible'));
 
       this.get('ajax').request(Env.APP.API_URL + '/api/participants', {
         method: 'POST',
         data: { data: formData }
       }).then(this.onResponse());
+    },
+
+    closeModal() {
+      this.set('.currentModel.modalVisible', false);
+      this.set('.currentModel.isSuccess', true);
     }
   }
 });

@@ -52,5 +52,5 @@
 
 {{model.modalVisible}}
 {{#if model.modalVisible}}
-  {{success-modal eventId=model.eventId onclose=(route-action 'closeModal')}}
+  {{congrats-modal onclose=(route-action 'closeModal')}}
 {{/if}}

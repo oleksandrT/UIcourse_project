@@ -33,13 +33,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   onResponse(response) {
     this.get('currentModel').set('modalVisible', true);
-    console.log('data from server: ', response);
-    // let linkToEvent = '/events/' + response.eventId;
+
     this.get('currentModel').set('eventId', response.eventId);
-    //let message = 'Event was saved successfully \nShare the link so people can register to your event \n' + linkToEvent;
-    //alert(message);
-    //this.get('currentModel').clearModel();
-    //this.transitionTo('dashboard');
   },
 
   actions: {
@@ -58,13 +53,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     },
 
     saveEvent() {
-      //let self = this;
-
       let errors = this.validateModel();
 
       if (Object.keys(errors).length) {
         this.get('currentModel').set('errors', errors);
-        //alert('error');
         return;
       }
 

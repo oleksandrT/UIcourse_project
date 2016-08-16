@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+   
   classesList: function () {
     let classes = this.get('model.event.classes') || [];
     return classes.map(function (cls) {
