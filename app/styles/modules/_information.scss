@@ -1,0 +1,58 @@
+/*
+ * EVENT INFORMATION MODULE
+ */
+
+.event-information {
+  padding: 2.5rem 2rem;
+  overflow: auto;
+
+  .wrapper {
+    min-width: 500px;
+    margin: 0 auto;
+    overflow: auto;
+  }
+
+  .participants-list {
+    width: 100%;
+    border-top: 1px solid #ece8e8;
+    border-bottom: 1px solid #ece8e8;
+    margin: 2rem auto;
+    letter-spacing: 0.03em;
+  }
+
+  thead th {
+    font-weight: 400;
+    color: $dark-gray;
+  }
+
+  tr {
+    //background: #f4f7f8;
+    border-top: 1px solid #ece8e8;
+    margin-bottom: 5px;
+  }
+
+  th {
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 20px;
+    font-weight: 300;
+  }
+
+  .mark {
+    text-align: center;
+  }
+
+  td.mark {
+    color: $light-gray;
+  }
+
+  .choosen, td.choosen {
+    font-weight: 800;
+    font-size: 1.5em;
+    color: $primary-color;
+  }
+}

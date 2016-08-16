@@ -74,6 +74,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
       // serialize form data
       let formData = JSON.stringify(this.get('currentModel').serialize());
+      console.log('formData: ', formData);
+      console.log('type of formData: ', typeof formData);
 
       // send data to server
       this.get('ajax').request(Env.APP.API_URL + "/api/events", {

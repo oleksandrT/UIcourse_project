@@ -30,7 +30,6 @@
                             <li>
                                 <label>
                                     {{input type="checkbox" class="form-checkbox" checked=class.checked change=(action 'checkboxClick' class)}}
-                                    {{!input-checkbox class="form-checkbox"  checked=class.checked on-change=(action 'checkboxClick' class)}}
                                     <div class="schedule-list_content">
                                         <div class="schedule-list_time">{{class.cls.timeFrom}} - {{class.cls.timeTo}}</div>
                                         <div class="schedule-list_title">{{class.cls.title}}</div>
@@ -51,6 +50,7 @@
     </div>
 </section>
 
+{{model.modalVisible}}
 {{#if model.modalVisible}}
   {{success-modal eventId=model.eventId onclose=(route-action 'closeModal')}}
 {{/if}}
