@@ -4,7 +4,7 @@ import Env from 'uicourse-project/config/environment';
 export default Ember.Component.extend({
   init() {
     this._super(...arguments);
-    
+
     let authStorage = localStorage.getItem('ember_simple_auth:session');
     let dbId = JSON.parse(authStorage).authenticated.user._id;
 
